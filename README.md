@@ -51,13 +51,28 @@ I chose to use a ```StringBuilder``` instead of a ```string``` because it is mor
 
 ## Tests
 
+``` c#
+public void TestName(int input, string expected)
+{
+	string actual = obj.PlingPlangPlong(input);
+	Assert.That(actual, Is.EqualTo(expected));
+}
+```
+
+All Unit Tests were written in this format with three or four ```TestCase[]```'s each. The ```TestCase[]``` would specify the input and expected output as shown in the method above.
+
+The tests were:
+
+1. A number that is divisable by three returns "Pling".
+2. A number that is divisable by five returns "Plang".
+3. A number that is divisable by seven returns "Plong".
+4. A number that is not divisable by three, five or seven returns the input number.
+5. A number that is divisable by both three and five returns "PlingPlang".
+6. A number that is divisable by both three and seven returns "PlingPlong".
+7. A number that is divisable by both five and seven returns "PlangPlong".
+8. A number that is divisable by three, five and seven returns "PlingPlangPlong".
 
 
 
-
-
-
-
-
-
+Tests 1 to 3 had four ```TestCase[]```'s and tests 4 to 8 had three ```TestCase[]```'s. Each test had a nugitive number test to ensure that the correct output would still be given even with a negitive number for input.
 
