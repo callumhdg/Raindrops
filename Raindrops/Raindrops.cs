@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Raindrops
 {
-    public class Raindrops
+    public class RainDrops
     {
+        public RainDrops()
+        {
+        }
 
         public string PlingPlangPlong(int input)
         {
