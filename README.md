@@ -16,32 +16,28 @@
 public string PlingPlangPlong(int input)
 {
 	StringBuilder sb = new StringBuilder();
-	bool isAFactor = false;
 
 	if (input % 3 == 0){
 		sb.Append("Pling");
-		isAFactor = true;
 	}
 
 	if (input % 5 == 0){
 		sb.Append("Plang");
-		isAFactor = true;
 	}
 
 	if (input % 7 == 0){
 		sb.Append("Plong");
-		isAFactor = true;
 	}
 
-	return (isAFactor == true) ? sb.ToString() : input.ToString();
+	return (sb.Length != 0) ? sb.ToString() : input.ToString();
 }
 ```
 
-This method checks if an input intager is divisable by 3, 5 or 7. If any conditions are met the corosponding string is returned, in contrast if the input is not divisable by 3, 5 or 7 then the input number is returned.
+This method checks if an input integer is divisible by 3, 5 or 7. If any conditions are met the corresponding string is returned, in contrast if the input is not divisible by 3, 5 or 7 then the input number is returned.
 
 
 
-I chose to use a ```StringBuilder``` instead of a ```string``` because it is more memory efficient in this implementation, this is because the ```ToString()``` method is only called once. If a ```string``` was used instead of a ```StringBuilder``` by using ```string output += "Pling"``` then this would have created a new object on the heap each time the ```string``` value chaned.
+I chose to use a ```StringBuilder``` instead of a ```string``` because it is more memory efficient in this implementation, this is because the ```ToString()``` method is only called once. If a ```string``` was used instead of a ```StringBuilder``` by using ```string output += "Pling"``` then this would have created a new object on the heap each time the ```string``` value changed.
 
 
 
@@ -63,16 +59,16 @@ All Unit Tests were written in this format with three or four ```TestCase[]```'s
 
 The tests were:
 
-1. A number that is divisable by three returns "Pling".
-2. A number that is divisable by five returns "Plang".
-3. A number that is divisable by seven returns "Plong".
-4. A number that is not divisable by three, five or seven returns the input number.
-5. A number that is divisable by both three and five returns "PlingPlang".
-6. A number that is divisable by both three and seven returns "PlingPlong".
-7. A number that is divisable by both five and seven returns "PlangPlong".
-8. A number that is divisable by three, five and seven returns "PlingPlangPlong".
+1. A number that is divisible by three returns "Pling".
+2. A number that is divisible by five returns "Plang".
+3. A number that is divisible by seven returns "Plong".
+4. A number that is not divisible by three, five or seven returns the input number.
+5. A number that is divisible by both three and five returns "PlingPlang".
+6. A number that is divisible by both three and seven returns "PlingPlong".
+7. A number that is divisible by both five and seven returns "PlangPlong".
+8. A number that is divisible by three, five and seven returns "PlingPlangPlong".
 
 
 
-Tests 1 to 3 had four ```TestCase[]```'s and tests 4 to 8 had three ```TestCase[]```'s. Each test had a nugitive number test to ensure that the correct output would still be given even with a negitive number for input.
+Tests 1 to 3 had four ```TestCase[]```'s and tests 4 to 8 had three ```TestCase[]```'s. Each test had a negative number test to ensure that the correct output would still be given even with a negative number for input.
 
